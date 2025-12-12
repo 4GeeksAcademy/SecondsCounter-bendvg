@@ -10,9 +10,14 @@ import '../styles/index.css'
 
 // components
 import Home from './components/Home';
-
-ReactDOM.createRoot(document.getElementById('root')).render(
+let count = 0; 
+setInterval(() => {
+    if (count < 999999) {
+    count++;
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Home/>
+    <Home count={count}/>
   </React.StrictMode>,
-)
+)   
+},1000)
